@@ -34,6 +34,16 @@ app.use(bodyParser.json())
 const limiter=rateLimit({windowMs:15*60*100,max:300})
 
 //Database
+
+
+//Managing FontEnd  Routing
+app.use(express.static('client/build'))
+app.get("*",function (req,res) {
+    req.sendFile(path.resolve(__dirname,'client','build','index.html'))
+})
+
+
+//Managing BackEnd api Routing
 app.use("/api/v1",router)
 
 module.exports=app;
