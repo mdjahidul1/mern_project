@@ -4,7 +4,7 @@ import axios from "axios";
 const HomeBanner = (jahid) => {
 
 //Use State By Hooks-->Functional Component
-    const [color,setColor]=useState("red")
+    const [color,setColor]=useState("green")
     const NewBlue = () => {
              setColor("BLUE")
     }
